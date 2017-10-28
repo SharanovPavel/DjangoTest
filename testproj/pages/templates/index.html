@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block additional_title  %} - Main {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <h1 class="uk-text-center">Welcome back, {{ user.username }}!</h1>
+    <h2 class="uk-text-center">Now you able to <a href="{% url 'mail_admins' %}">send message</a> to our admins!</h2>
+{% else %}
+    <h1 class="uk-text-center">Hello! This is my Django test application.</h1>
+	<h2 class="uk-text-center">You can <a href="{% url 'login' %}">log in</a>, if you have an account, or <a href="{% url 'register' %}">register</a> to be available to send emails to our admins!</h2>
+{% endif %}
+{% endblock %}

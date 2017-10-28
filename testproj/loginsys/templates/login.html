@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static from staticfiles %}
+
+{% block additional_title %}
+ - Login
+{% endblock %}
+
+{% block content %}
+<div id="formContainer" class="uk-container uk-position-center">
+	<form id="loginForm" action="{% url 'login' %}" method="post">
+	{% csrf_token %}
+	{{ form }}
+	<p><input id="id_submit" type="submit" name="submit" value="Login"></p>
+	</form>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+	<script src="{% static 'js/login.js' %}"></script>
+	<script src="{% static 'js/csrf_ajax_setup.js' %}"></script>
+{% endblock %}
