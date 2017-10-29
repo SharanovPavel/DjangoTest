@@ -7,9 +7,10 @@ from .forms import ContactForm
 from .models import UserMessage
 from django.conf import settings
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required
 def mail_admins(request):
 	if request.method == 'POST':
 		admin_emails = [v for k,v in settings.ADMINS]

@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL_REDIRECT = 'index'
-
+LOGIN_URL = '/auth/login'
 CSRF_USE_SESSIONS = True
 
 ADMINS = [('Pavel', 'sharanov.pasha@gmail.com'), ('Daria', 'geecaik@gmail.com')]
